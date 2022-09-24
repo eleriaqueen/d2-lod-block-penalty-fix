@@ -4,7 +4,7 @@ Base Address 0x00400000
 0x0057e009      je      0x57e021
 0x0057e00b      cmp     dword [esi + 0x10], 2
 0x0057e00f      je      0x57e021
-0x0057e011      mov     eax, 0x55555556 ; 'VUUU'
+0x0057e011      mov     eax, 0x55555556
 0x0057e016      imul    ebx
 0x0057e018      mov     eax, edx
 0x0057e01a      shr     eax, 0x1f
