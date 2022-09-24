@@ -1,0 +1,90 @@
+Game.exe
+Base Address 0x00400000
+
+0x0057e009      je      0x57e021
+0x0057e00b      cmp     dword [esi + 0x10], 2
+0x0057e00f      je      0x57e021
+0x0057e011      mov     eax, 0x55555556 ; 'VUUU'
+0x0057e016      imul    ebx
+0x0057e018      mov     eax, edx
+0x0057e01a      shr     eax, 0x1f
+0x0057e01d      add     eax, edx
+0x0057e01f      mov     ebx, eax
+0x0057e021      mov     eax, dword [esi + 0x20]
+
+I - [How to change penalty to 1/2]
+
+Go to file offset 0x0017e011
+
+Replace
+
+Asm:
+---
+0x0057e011      mov     eax, 0x55555556
+0x0057e016      imul    ebx
+0x0057e018      mov     eax, edx
+0x0057e01a      shr     eax, 0x1f
+0x0057e01d      add     eax, edx
+0x0057e01f      mov     ebx, eax
+
+Hex:
+---
+b8 56555555
+f7 eb
+8bc2
+c1e8 1f
+03c2
+8bd8
+
+
+With
+
+Asm:
+---
+0x0057e011      shr     ebx, 1
+0x0057e013      nop
+0x0057e014      nop
+0x0057e015      nop
+0x0057e016      nop
+0x0057e017      nop
+0x0057e018      nop
+0x0057e019      nop
+0x0057e01a      nop
+0x0057e01b      nop
+0x0057e01c      nop
+0x0057e01d      nop
+0x0057e01e      nop
+0x0057e01f      nop
+0x0057e020      nop
+
+Hex:
+---
+d1eb
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+
+II - [How to bypass penalty]
+
+Go to file offset 0x17e009
+
+Replace
+
+Asm: je 0x57bbf8
+Hex: 7410
+
+With
+
+Asm: jmp 0x57bbf8
+Hex: eb16
