@@ -82,7 +82,7 @@ Go to file offset 0x17bbe0
 Replace
 
 Asm: je 0x57bbf8
-Hex: 7410
+Hex: 7416
 
 With
 
