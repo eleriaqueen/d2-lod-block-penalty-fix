@@ -16,6 +16,8 @@ I - [How to change penalty to 1/2]
 
 Go to file offset 0x6fca8ab5
 
+Or search for hex string: B8 56555555 F7EB 8BC2 C1E8 1F 03C2 8BD8
+
 Replace
 
 Asm:
@@ -78,6 +80,8 @@ d1eb
 II - [How to bypass penalty]
 
 Go to file offset 0x00088AAD
+
+Or search for hex string: 7416 837e1002
 
 Replace
 
