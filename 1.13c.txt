@@ -1,0 +1,94 @@
+D2Game.dll
+Base Address 0x6fc20000
+
+0x6fcfb7dd      je      0x6fcfb7f5
+0x6fcfb7df      cmp     dword [esi + 0x10], 2
+0x6fcfb7e3      je      0x6fcfb7f5
+0x6fcfb7e5      mov     eax, 0x55555556
+0x6fcfb7ea      imul    ebx
+0x6fcfb7ec      mov     eax, edx
+0x6fcfb7ee      shr     eax, 0x1f
+0x6fcfb7f1      add     eax, edx
+0x6fcfb7f3      mov     ebx, eax
+0x6fcfb7f5      mov     eax, dword [esi + 0x20]
+
+I - [How to change penalty to 1/2]
+
+Go to file offset 0x000db7e5
+
+Or search for hex string: B8 56555555 F7EB 8BC2 C1E8 1F 03C2 8BD8
+
+Replace
+
+Asm:
+---
+0x6fcfb7e5      mov     eax, 0x55555556
+0x6fcfb7ea      imul    ebx
+0x6fcfb7ec      mov     eax, edx
+0x6fcfb7ee      shr     eax, 0x1f
+0x6fcfb7f1      add     eax, edx
+0x6fcfb7f3      mov     ebx, eax
+
+Hex:
+---
+b8 56555555
+f7 eb
+8bc2
+c1e8 1f
+03c2
+8bd8
+
+
+With
+
+Asm:
+---
+0x6fca8ab5      shr     ebx, 1
+0x6fca8ab7      nop
+0x6fca8ab8      nop
+0x6fca8ab9      nop
+0x6fca8aba      nop
+0x6fca8abb      nop
+0x6fca8abc      nop
+0x6fca8abd      nop
+0x6fca8abe      nop
+0x6fca8abf      nop
+0x6fca8ac0      nop
+0x6fca8ac1      nop
+0x6fca8ac2      nop
+0x6fca8ac3      nop
+0x6fca8ac4      nop
+
+Hex:
+---
+d1eb
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+
+II - [How to bypass penalty]
+
+Go to file offset 0x000db7dd
+
+Or search for hex string: 7416 837e1002
+
+Replace
+
+Asm: je 0x6fcfb7f5
+Hex: 7416
+
+With
+
+Asm: jmp 0x6fcfb7f5
+Hex: eb16
