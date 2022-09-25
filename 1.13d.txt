@@ -14,7 +14,7 @@ Base Address 0x6fc20000
 
 I - [How to change penalty to 1/2]
 
-Go to file offset 0x6fca8ab5
+Go to file offset 0x0x00088ab5
 
 Or search for hex string: B8 56555555 F7EB 8BC2 C1E8 1F 03C2 8BD8
 
@@ -79,7 +79,7 @@ d1eb
 
 II - [How to bypass penalty]
 
-Go to file offset 0x00088AAD
+Go to file offset 0x00088aad
 
 Or search for hex string: 7416 837e1002
 
