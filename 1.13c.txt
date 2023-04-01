@@ -1,5 +1,4 @@
-D2Game.dll
-Base Address 0x6fc20000
+D2Game.dll (Base Address 0x6fc20000)
 
 0x6fcfb7dd      je      0x6fcfb7f5
 0x6fcfb7df      cmp     dword [esi + 0x10], 2

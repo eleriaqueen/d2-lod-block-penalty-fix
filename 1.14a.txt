@@ -1,5 +1,4 @@
-Game.exe
-Base Address 0x00400000
+Game.exe (Base Address 0x00400000)
 
 0x00587d30      je      0x587d48
 0x00587d32      cmp     dword [esi + 0x10], 2
