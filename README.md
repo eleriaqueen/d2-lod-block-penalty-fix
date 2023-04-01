@@ -8,9 +8,9 @@ Bare minimum you need a hexadecimal editor and need to know how to search for an
 Recommended hex editor : [ImHex](https://github.com/WerWolv/ImHex)
 
 ## Explanation
-The unmodified game applies a penalty to block chance when running, reducing chance to 1/3rd of its value.
-You can reduce the penalty so that chance to block is only halved.
-Bypassing the penalty completely an other possibility.
+The unmodified game reduces block chance while running to one third of its value.
+With the information in this repository you can reduce the penalty so that it is only halved,
+or bypass the penalty completely.
 
 ## Thanks
 Fearedbliss for 1.14d offset
